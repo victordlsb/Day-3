@@ -11,6 +11,7 @@ class Rectangle {
 Rectangle rect = new Rectangle();
 Point p1 = new Point();
 Point p2 = new Point();
+Point p3 = new Point();
 
 print("Insert the x position of the up left corner: ");
 p1.x = Double.parseDouble(System.console().readLine());
@@ -32,8 +33,17 @@ while (!p2_correct){
 	}
 }
 
+print ("\nInsert the x position of the third point: ");
+p3.x = Double.parseDouble(System.console().readLine());
+print ("Insert the y position of the third corner: ");
+p3.y = Double.parseDouble(System.console().readLine());
+
+
 rect.upLeft = p1;
 rect.downRight = p2;
 
-double area = Math.abs(rect.upLeft.x-rect.downRight.x)*Math.abs(rect.upLeft.y-rect.downRight.y);
-println ("\nThe area of the rectangle is: " + area);
+if (p3.x < rect.upLeft.x || p3.x > rect.downRight.x || p3.y > rect.upLeft.y || p3.y < rect.downRight.y ){
+	println ("\nThe third point is outside the rectangle area");
+}else{
+	println ("\nThe third point is inside the rectangle area");
+}
