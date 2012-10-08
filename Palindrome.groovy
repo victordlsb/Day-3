@@ -15,3 +15,4 @@ if (palindrome){
 }else{
 	println ("The phrase is NOT a palindrome");
 }
+//End
